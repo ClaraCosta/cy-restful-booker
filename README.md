@@ -1,0 +1,1 @@
+<h1>Booker API - Cypress</h1>
