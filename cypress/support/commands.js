@@ -23,3 +23,18 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add('postRequest', (endpoint, headers = {}, body = {} , qs = {}) => {
+//Chamando o Cypress.Commands.add, passando os parâmetros    
+    cy.request({
+    //Chamando o cy.request
+        method: 'POST',
+        url: endpoint,
+        headers: headers,
+        qs: qs,
+        body: body,
+        failOnStatusCode: false
+    }).then(response =>{
+        return response
+    })
+})
