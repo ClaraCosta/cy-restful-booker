@@ -7,8 +7,11 @@ module.exports = defineConfig({
       // implement node event listeners here
     },
     env:{
-      requestMode: true
-    
+      requestMode: true,
+      auth_url: '/auth',
+      body:{
+        "username": "admin",
+        "password": "password123"}
     }
   },
 });
