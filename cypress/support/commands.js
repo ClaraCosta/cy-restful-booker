@@ -38,3 +38,18 @@ Cypress.Commands.add('postRequest', (endpoint, headers = {}, body = {} , qs = {}
         return response
     })
 })
+
+Cypress.Commands.add('getRequest', (endpoint, headers = {}, body = {} , qs = {}) => {
+    //Chamando o Cypress.Commands.add, passando os parâmetros    
+        cy.request({
+        //Chamando o cy.request
+            method: 'GET',
+            url: endpoint,
+            headers: headers,
+            qs: qs,
+            body: body,
+            failOnStatusCode: false
+        }).then(response =>{
+            return response
+        })
+    })

@@ -91,7 +91,7 @@ describe('Test Suit - Auth API Booker', () => {
 
         })
 
-        it('4 - Updating a booking with success', () => {
+        it.only('4 - Updating a booking with success', () => {
             
             cy.request({
                 method: 'PUT',
@@ -119,5 +119,19 @@ describe('Test Suit - Auth API Booker', () => {
         
                 
             })
+
+})
+
+
+describe('Test Suit - Booking API Testing with custom commands', () => {
+
+    it('1 - Ge5t all booking ids', () => {
+        cy.getRequest('/booking', { 'Content-Type': 'application/json'}).then(response => {
+            expect(response.status).to.eq(200);
+            expect(response.body).to.be.an('array');
+            expect(response.body).to.have.lengthOf.at.least(1);
+            expect(response.body[0]).to.have.property('bookingid');
+        })
+    })
 
 })
