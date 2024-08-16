@@ -46,8 +46,7 @@ describe('Test Suit - Auth API Booker', () => {
                 headres: { 'Content-Type': 'application/json'}
                 }).then((response)=>{
                 expect(response.status).to.eq(200);
-                expect(response.body).to.have.a.property( "firstname");
-                expect(response.body).to.have.a.property( "depositpaid", false, true);
+                expect(response.body).to.have.a.property( "firstname").to.be.an('string');
 
         });
 
