@@ -7,6 +7,7 @@ module.exports = defineConfig({
       // implement node event listeners here
     },
     env:{
+      hideCredentials: true,
       requestMode: true,
       auth_url: '/auth',
       body:{
