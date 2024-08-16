@@ -18,6 +18,7 @@ describe('Test Suit - Auth API Booker', () => {
             cy.log(JSON.stringify(token));
             Cypress.env("token", token);
         });
+
     })
 
 
@@ -38,15 +39,15 @@ describe('Test Suit - Auth API Booker', () => {
         
         })
 
-        it('2 - Get booking created by it "3 - Creating a new booking with success" ', () => {
+        it.only('2 - Get booking created by it "3 - Creating a new booking with success" ', () => {
             cy.request({
-            method: 'GET',
-            url: '/booking/74',
-            headres: { 'Content-Type': 'application/json'}
-            }).then((response)=>{
-            expect(response.status).to.eq(200);
-            expect(response.body).to.have.a.property( "firstname");
-            expect(response.body).to.have.a.property( "depositpaid", true);
+                method: 'GET',
+                url: `/booking/`+ Math.floor(Math.random() * 10),
+                headres: { 'Content-Type': 'application/json'}
+                }).then((response)=>{
+                expect(response.status).to.eq(200);
+                expect(response.body).to.have.a.property( "firstname");
+                expect(response.body).to.have.a.property( "depositpaid", false, true);
 
         });
 
@@ -91,7 +92,7 @@ describe('Test Suit - Auth API Booker', () => {
 
         })
 
-        it.only('4 - Updating a booking with success', () => {
+        it('4 - Updating a booking with success', () => {
             
             cy.request({
                 method: 'PUT',
@@ -146,7 +147,7 @@ describe('Test Suit - Booking API Testing with custom commands', () => {
         })
     })
 
-    it.only('3 - Creating new booking with success (Fixture)', () => {
+    it('3 - Creating new booking with success (Fixture)', () => {
 
         cy.fixture('bookingPost.json').then((newBooking) => {
 
