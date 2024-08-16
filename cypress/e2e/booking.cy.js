@@ -39,7 +39,7 @@ describe('Test Suit - Auth API Booker', () => {
         
         })
 
-        it.only('2 - Get booking created by it "3 - Creating a new booking with success" ', () => {
+        it('2 - Get booking created by it "3 - Creating a new booking with success" ', () => {
             cy.request({
                 method: 'GET',
                 url: `/booking/`+ Math.floor(Math.random() * 10),
