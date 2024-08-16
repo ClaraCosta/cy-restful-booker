@@ -134,7 +134,7 @@ describe('Test Suit - Booking API Testing with custom commands', () => {
         })
     })
 
-    it.only('2 - Get booking id by firstname', () => {
+    it('2 - Get booking id by firstname', () => {
 
         let queryString = {'firstName': 'test'};
 
@@ -144,6 +144,20 @@ describe('Test Suit - Booking API Testing with custom commands', () => {
             expect(response.body).to.have.lengthOf.at.least(1);
             expect(response.body[0]).to.have.property('bookingid');
         })
+    })
+
+    it.only('3 - Creating new booking with success (Fixture)', () => {
+
+        cy.fixture('bookingPost.json').then((newBooking) => {
+
+            cy.postRequest('/booking', { 'Content-Type': 'application/json'}, newBooking).then(response => {
+                expect(response.status).to.eq(200);
+                expect(response.body).to.be.an('object');
+                expect(response.body).to.have.property('bookingid');
+            })
+
+        })
+
     })
     
 
