@@ -95,7 +95,7 @@ describe('Test Suit - Auth API Booker', () => {
             
             cy.request({
                 method: 'PUT',
-                url: '/booking/30',
+                url: '/booking/20',
                 headers: {
                     Accept: "application/json",
                     Cookie: `token=${token}`,
@@ -136,7 +136,7 @@ describe('Test Suit - Booking API Testing with custom commands', () => {
 
     it('2 - Get booking id by firstname', () => {
 
-        let queryString = {'firstName': 'test'};
+        let queryString = {'firstName': 'Another'};
 
         cy.getRequest('/booking', { 'Content-Type': 'application/json'}, queryString).then(response => {
             expect(response.status).to.eq(200);
