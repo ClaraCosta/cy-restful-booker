@@ -11,9 +11,6 @@
 <hr>
 
 
-
-
-
 <h3 align='center'>Tecnologias utilizadas:</h3>
 
 <p align='center'>
@@ -27,15 +24,6 @@
 <hr>
 
 
-
-
-
-
-
-
-
-
-
 <h3>Observações gerais:</h3>
 
 <b>Foram utilizados dois plugins para melhor visualização das requisições:</b>
@@ -46,7 +34,7 @@
 <b>Existem duas formas de visualização das requisições, considerando os dois comandos:</b>
   - `npx cypress run` - para acompanhamento através do terminal;
   <br>
-<img src="img/image.png" align='center' height="300" >
+<img src="img/Screenshot.png" align='center' height="300" >
 
 <br>
 
